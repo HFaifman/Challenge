@@ -26,7 +26,7 @@ function App() {
 
   return (
     <form
-      className="bg-black w-full h-full flex flex-col gap-4 p-8"
+      className="w-full h-full flex flex-col gap-4 p-8"
       onSubmit={handleSubmit}
     >
       <Label className="text-white" htmlFor="format">
