@@ -1,7 +1,7 @@
 export = getHash;
 
 type Hash = {
-    [key]: string | number | boolean
-}
+  [key]: string | number | boolean;
+};
 
-declare function getHash(format: string, instance: string): Hash
+declare function getHash(format: string, instance: string): Hash;
