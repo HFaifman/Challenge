@@ -13,8 +13,10 @@ function App() {
   const [parsedURL, setParsedURL] = useState({});
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const { format, instance } = values;
     e.preventDefault();
+
+    const { format, instance } = values;
+
     if (instance && format) {
       setParsedURL(getHash(format, instance));
     }
