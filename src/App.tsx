@@ -52,7 +52,7 @@ function App() {
       <div>
         <Button type="submit">Submit</Button>
       </div>
-      <p className="text-white">
+      <p className="text-white break break-all">
         {Object.values(parsedURL).length > 0 && JSON.stringify(parsedURL)}
       </p>
     </form>
