@@ -23,7 +23,7 @@ class Animal {
       type: "string",
       errorMessageType: "sound",
     });
-    
+
     this.id = new randomUUID();
     this.type = type;
     this.sound = sound;
@@ -73,7 +73,7 @@ class Zoo {
   removeAnimal(id) {
     const foundAnimal = this.animals.find((animal) => animal.id === id);
     if (foundAnimal) {
-      const filteredAnimals = this.animals.filter((animal) => animal.id !== id);
+      const filteredAnimals = this.animals.filter((animal) => animal.getId() !== id);
       this.animals = filteredAnimals;
       return filteredAnimals;
     }
