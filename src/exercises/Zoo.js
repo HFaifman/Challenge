@@ -1,3 +1,5 @@
+import { randomUUID } from "crypto";
+
 class Validator {
   checkParamPresenceAndValidType = ({ param, type, errorMessageType }) => {
     if (!param) {
@@ -21,8 +23,14 @@ class Animal {
       type: "string",
       errorMessageType: "sound",
     });
+    
+    this.id = new randomUUID();
     this.type = type;
     this.sound = sound;
+  }
+
+  getId() {
+    return this.id;
   }
 
   speak(speech) {
@@ -60,6 +68,15 @@ class Zoo {
       return this.animals;
     }
     throw Error("not a valid animal");
+  }
+
+  removeAnimal(id) {
+    const foundAnimal = this.animals.find((animal) => animal.id === id);
+    if (foundAnimal) {
+      const filteredAnimals = this.animals.filter((animal) => animal.id !== id);
+      this.animals = filteredAnimals;
+      return filteredAnimals;
+    }
   }
 
   getAnimals() {
